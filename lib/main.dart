@@ -15,14 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'WhatsApp App',
       theme: ThemeData.dark().copyWith(
-
-       colorScheme: const ColorScheme.dark().copyWith(background: AppColors.backgroundColor)
+        scaffoldBackgroundColor: AppColors.backgroundColor,
+       
       ),
-      home: const ResponsiveLayout(mobileScreenLayout:  MobileScreenLayout(), webScreenLayout: WebScreenLayout(),),
-    
+      home: const ResponsiveLayout(
+        mobileScreenLayout: MobileScreenLayout(),
+        webScreenLayout: WebScreenLayout(),
+      ),
     );
   }
 }
-
