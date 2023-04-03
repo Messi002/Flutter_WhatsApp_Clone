@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/app_colors.dart';
 
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({super.key});
@@ -9,6 +10,7 @@ class MobileScreenLayout extends StatelessWidget {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
+            backgroundColor: AppColors.appBarColor,
             title: const Text(
               'WhatsApp',
               style: TextStyle(
@@ -37,6 +39,21 @@ class MobileScreenLayout extends StatelessWidget {
                     color: Colors.grey,
                   ))
             ],
+            bottom: TabBar(
+                indicatorColor: AppColors.tabColor,
+                labelColor: AppColors.tabColor,
+                indicatorWeight: 4,
+                indicatorSize: TabBarIndicatorSize.tab,
+                unselectedLabelColor: Colors.grey,
+                labelStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+                tabs: [
+                  Icon(Icons.people),
+                  Text('Chats'),
+                  Text('Status'),
+                  Text('Calls'),
+                ]),
           ),
         ));
   }
