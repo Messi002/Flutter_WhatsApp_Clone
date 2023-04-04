@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../info.dart';
+import 'my_message_card.dart';
 
 class ChatList extends StatelessWidget {
   const ChatList({super.key});
@@ -12,10 +13,14 @@ class ChatList extends StatelessWidget {
       itemBuilder: (context, index) {
         final item = messages[index];
         if (item['isMe'] == true) {
-         //My messageCard 
+          //My messageCard
+          return MyMessageCard(message: item['text'].toString(), date: item['date'].toString(),);
         }
         //Sender message
       },
     );
   }
 }
+
+
+//1: 06 : 26
