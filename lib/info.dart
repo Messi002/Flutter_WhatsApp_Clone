@@ -14,7 +14,7 @@ const info = [
         'https://www.socialketchup.in/wp-content/uploads/2020/05/fi-vill-JOHN-DOE.jpg',
   },
   {
-    'name': 'Naman Ranawat',
+    'name': 'Messi Innocent',
     'message': 'Hello, I want to sleep.',
     'time': '1:03 pm',
     'profilePic':
