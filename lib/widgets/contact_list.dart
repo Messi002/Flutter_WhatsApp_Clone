@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/mobile_chat_screen.dart';
 
 import '../app_colors.dart';
 import '../info.dart';
@@ -17,23 +18,38 @@ class ContactList extends StatelessWidget {
           return Column(
             children: [
               InkWell(
-                onTap: (){},
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const MobileChatScreen(),
+                  ));
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: ListTile(
-                    title: Text(item['name'].toString(), style: const TextStyle(fontSize: 18)),
+                    title: Text(item['name'].toString(),
+                        style: const TextStyle(fontSize: 18)),
                     subtitle: Padding(
                       padding: const EdgeInsets.only(top: 6),
-                      child: Text(item['message'].toString(), style: const TextStyle(fontSize: 15),),
+                      child: Text(
+                        item['message'].toString(),
+                        style: const TextStyle(fontSize: 15),
+                      ),
                     ),
                     leading: CircleAvatar(
-                      backgroundImage: NetworkImage(item['profilePic'].toString()),
+                      backgroundImage:
+                          NetworkImage(item['profilePic'].toString()),
                     ),
-                    trailing: Text(item['time'].toString(), style: const TextStyle(fontSize: 13, color: Colors.grey),),
+                    trailing: Text(
+                      item['time'].toString(),
+                      style: const TextStyle(fontSize: 13, color: Colors.grey),
+                    ),
                   ),
                 ),
               ),
-              const Divider(color: AppColors.dividerColor,indent: 85,),
+              const Divider(
+                color: AppColors.dividerColor,
+                indent: 85,
+              ),
             ],
           );
         },

@@ -15,10 +15,16 @@ class ChatList extends StatelessWidget {
         final item = messages[index];
         if (item['isMe'] == true) {
           //My messageCard
-          return MyMessageCard(message: item['text'].toString(), date: item['date'].toString(),);
+          return MyMessageCard(
+            message: item['text'].toString(),
+            date: item['time'].toString(),
+          );
         }
         //Sender message
-         return SenderMessageCard(message: item['text'].toString(), date: item['date'].toString(),);
+        return SenderMessageCard(
+          message: item['text'].toString(),
+          date: item['time'].toString(),
+        );
       },
     );
   }
