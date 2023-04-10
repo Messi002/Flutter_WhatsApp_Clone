@@ -30,6 +30,9 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
 
   void selectImage() async {
     image = await pickImageFromGallery(context);
+    setState(() {
+      
+    });
   }
 
   @override
@@ -80,3 +83,6 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     );
   }
 }
+
+
+//2 : 10 : 25
