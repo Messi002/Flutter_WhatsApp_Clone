@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/app_colors.dart';
 import 'package:whatsapp_clone/features/landing/screen/landing_screen.dart';
 import 'package:whatsapp_clone/firebase_options.dart';
+import 'package:whatsapp_clone/router.dart';
 import 'package:whatsapp_clone/utils/responsive_layout.dart';
 import 'package:whatsapp_clone/screens/mobile_screen.dart';
 import 'package:whatsapp_clone/screens/web_screen.dart';
@@ -23,13 +24,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'WhatsApp App',
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: AppColors.backgroundColor,
-      ),
+          scaffoldBackgroundColor: AppColors.backgroundColor,
+          appBarTheme: AppBarTheme(color: AppColors.appBarColor)),
       // home: const ResponsiveLayout(
       //   mobileScreenLayout: MobileScreenLayout(),
       //   webScreenLayout: WebScreenLayout(),
       // ),
-      home:const LandingScreen(),
+      onGenerateRoute: (settings) => generateRoute(settings),
+      home: const LandingScreen(),
     );
   }
 }
