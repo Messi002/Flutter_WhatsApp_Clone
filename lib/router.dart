@@ -4,6 +4,7 @@ import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dar
 
 import 'features/auth/screens/login_screen.dart';
 import 'features/auth/screens/otp_screen.dart';
+import 'features/auth/screens/select_contacts_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -14,6 +15,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) =>  OTPScreen(verificationId: verificationId,));
     case UserInformationScreen.routeName:
       return MaterialPageRoute(builder: (context) => const UserInformationScreen());
+    case SelectContactScreen.routeName:
+      return MaterialPageRoute(builder: (context) => const SelectContactScreen());
     default:
       return MaterialPageRoute(
         builder: (context) => const Scaffold(

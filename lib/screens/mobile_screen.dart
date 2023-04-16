@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/app_colors.dart';
 import 'package:whatsapp_clone/widgets/contact_list.dart';
 
+import '../features/auth/screens/select_contacts_screen.dart';
+
 class MobileScreenLayout extends StatelessWidget {
   const MobileScreenLayout({super.key});
 
@@ -58,9 +60,15 @@ class MobileScreenLayout extends StatelessWidget {
           ),
         ),
         body: const ContactList(),
-        floatingActionButton: FloatingActionButton(onPressed: (){},
-        backgroundColor: AppColors.tabColor,
-        child: const Icon(Icons.message, color: Colors.white,),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, SelectContactScreen.routeName);
+          },
+          backgroundColor: AppColors.tabColor,
+          child: const Icon(
+            Icons.message,
+            color: Colors.white,
+          ),
         ),
       ),
     );

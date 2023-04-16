@@ -34,7 +34,7 @@ class MyApp extends ConsumerWidget {
           appBarTheme: const AppBarTheme(color: AppColors.appBarColor)),
       onGenerateRoute: (settings) => generateRoute(settings),
     
-      // home: const LandingScreen(),
+      // home: const MobileScreenLayout(),
         //this is what is to be there....
       home: ref.watch(userDataAuthProvider).when(
             data: (user) {
