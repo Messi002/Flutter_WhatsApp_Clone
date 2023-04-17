@@ -36,18 +36,5 @@ class MyApp extends ConsumerWidget {
     
       // home: const MobileScreenLayout(),
         //this is what is to be there....
-      home: ref.watch(userDataAuthProvider).when(
-            data: (user) {
-              if (user == null) {
-                return const LandingScreen();
-              }
-              return const MobileScreenLayout();
-            },
-            error: (err, trace) {
-              return ErrorScreen(error: err.toString());
-            },
-            loading: () => const Loader(),
-          ),
-    );
-  }
+    
 }
