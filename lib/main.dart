@@ -14,7 +14,11 @@ import 'package:whatsapp_clone/screens/web_screen.dart';
 
 import 'features/auth/screens/user_information_screen.dart';
 
-
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(const ProviderScope(child: MyApp()));
+}
 
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
