@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/common/widgets/error.dart';
 import 'package:whatsapp_clone/features/auth/screens/user_information_screen.dart';
+import 'package:whatsapp_clone/features/chat/screens/mobile_chat_screen.dart';
 
 import 'features/auth/screens/login_screen.dart';
 import 'features/auth/screens/otp_screen.dart';
@@ -12,11 +13,23 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const LoginScreen());
     case OTPScreen.routeName:
       final verificationId = settings.arguments as String;
-      return MaterialPageRoute(builder: (context) =>  OTPScreen(verificationId: verificationId,));
+      return MaterialPageRoute(
+          builder: (context) => OTPScreen(
+                verificationId: verificationId,
+              ));
     case UserInformationScreen.routeName:
-      return MaterialPageRoute(builder: (context) => const UserInformationScreen());
+      return MaterialPageRoute(
+          builder: (context) => const UserInformationScreen());
     case SelectContactScreen.routeName:
-      return MaterialPageRoute(builder: (context) => const SelectContactScreen());
+      return MaterialPageRoute(
+          builder: (context) => const SelectContactScreen());
+    case MobileChatScreen.routeName:
+      final arguments = settings.arguments as Map<String, dynamic>;
+      //This is how we extract the data passed to it
+      final name = arguments['name'];
+      final uid = arguments['uid'];
+      final photo = arguments['uid'];
+      return MaterialPageRoute(builder: (context) =>  MobileChatScreen(name: name,uid: uid, photo: photo));
     default:
       return MaterialPageRoute(
         builder: (context) => const Scaffold(
