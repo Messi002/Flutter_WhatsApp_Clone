@@ -66,7 +66,14 @@ class ChatRepository {
     required String receiverUserName,
     required MessageEnum messageType,
   }) async {
-    
+    final message = Message(
+        senderId: auth.currentUser!.uid,
+        receiverId: receiverUserId,
+        text: text,
+        type: messageType,
+        timeSent: timeSent,
+        messageId: messageId,
+        isSeen: false);
     //users -> sender id -> receiver id -> messages -> message id -> set data(or store message)
     await firestore
         .collection('users')
