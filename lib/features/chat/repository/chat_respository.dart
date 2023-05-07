@@ -112,7 +112,15 @@ class ChatRepository {
       //users -> sender id -> receiver id -> messages -> message id -> set data(or store message)
 
       //uid
-    
+      var messageId = const Uuid().v1();
+      //Saving to contacts sub collection
+      _saveDataToContactsSubCollection(
+        senderUserData,
+        receiverUserData,
+        text,
+        timeSent,
+        receiverUserId,
+      );
 
       _saveMessageToMessageSubCollection(
         receiverUserId: receiverUserId,
