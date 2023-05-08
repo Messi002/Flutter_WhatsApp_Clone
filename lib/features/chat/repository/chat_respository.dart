@@ -84,7 +84,15 @@ class ChatRepository {
         .doc('messageId')
         .set(message.toMap());
 
-    /
+    //users  -> receiver id -> sender id -> messages -> message id -> set data(or store message)
+      await firestore
+        .collection('users')
+        .doc(receiverUserId)
+        .collection('chats')
+         .doc(auth.currentUser!.uid)
+        .collection('messages')
+        .doc('messageId')
+        .set(message.toMap());
   }
 
   void sendTextMessage({
