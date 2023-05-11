@@ -122,17 +122,5 @@ class ChatRepository {
         receiverUserId,
       );
 
-      _saveMessageToMessageSubCollection(
-        receiverUserId: receiverUserId,
-        text: text,
-        timeSent: timeSent,
-        messageType: MessageEnum.text,
-        messageId: messageId,
-        receiverUserName: receiverUserData.name,
-        username: senderUserData.name,
-      );
-    } catch (e) {
-      showSnackBar(context: context, content: e.toString());
-    }
-  }
+     
 }
