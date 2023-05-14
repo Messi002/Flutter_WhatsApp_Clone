@@ -28,24 +28,7 @@ class _BottomChatFieldState extends State<BottomChatField> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          child: TextFormField(
-            controller: bottomTextController,
-            style: const TextStyle(color: Colors.white),
-            onChanged: (val) {
-              if (val.isNotEmpty) {
-                setState(() {
-                  isShowSendButton = true;
-                });
-              } else {
-                setState(() {
-                  isShowSendButton = false;
-                });
-              }
+ 
             },
             decoration: InputDecoration(
               filled: true,
