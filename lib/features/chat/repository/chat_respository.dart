@@ -24,6 +24,18 @@ class ChatRepository {
     required this.auth,
   });
 
+  Stream<List<ChatContact>> getChatContact() {
+    //we use asyncMap because we need to do some conversions in which
+    //Creates a new stream with each data 
+    //event of this stream asynchronously mapped to a new event.
+    return firestore
+        .collection('users')
+        .doc(auth.currentUser!.uid)
+        .collection('chats')
+        .snapshots().asyncMap((event) => null)
+
+  }
+
   _saveDataToContactsSubCollection(
     UserModel senderUserData,
     UserModel receiverUserData,

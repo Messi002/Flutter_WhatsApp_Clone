@@ -5,6 +5,14 @@ import 'package:whatsapp_clone/features/auth/controllers/auth_controller.dart';
 
 import 'package:whatsapp_clone/features/chat/repository/chat_respository.dart';
 
+final chatControllerProvider = Provider((ref) {
+  final chatRepository = ref.watch(chatRepositoryProvider);
+  return ChatController(
+    chatRepository: chatRepository,
+    ref: ref,
+  );
+});
+
 class ChatController {
   final ChatRepository chatRepository;
   final ProviderRef ref;
@@ -19,13 +27,13 @@ class ChatController {
     String text,
     String receiverUserId,
   ) {
-    ref
-      .read(userDataAuthProvider)
-      .whenData((value) =>
-            chatRepository.sendTextMessage(
+    ref.read(userDataAuthProvider).whenData(
+          (value) => chatRepository.sendTextMessage(
             context: context,
             text: text,
             receiverUserId: receiverUserId,
-            senderUserData: value!,),);
+            senderUserData: value!,
+          ),
+        );
   }
 }
