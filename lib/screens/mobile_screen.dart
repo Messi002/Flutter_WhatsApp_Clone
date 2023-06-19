@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/app_colors.dart';
-import 'package:whatsapp_clone/widgets/contact_list.dart';
+import 'package:whatsapp_clone/features/chat/widgets/contact_list.dart';
 
 import '../features/auth/screens/select_contacts_screen.dart';
 
