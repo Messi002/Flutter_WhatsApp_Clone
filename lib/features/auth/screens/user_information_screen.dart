@@ -54,26 +54,26 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
           child: Center(
         child: Column(
           children: [
-            // Stack(
-            //   children: [
-            //     image == null
-            //         ? const CircleAvatar(
-            //             backgroundImage: NetworkImage(
-            //                 'https://media.istockphoto.com/id/1370481100/photo/the-rabbit.jpg?b=1&s=170667a&w=0&k=20&c=RRWCO8rA35DL_pWrlU8F0whOqoZgrEGJQdPGhK2aH1o='),
-            //             radius: 64,
-            //           )
-            //         : CircleAvatar(
-            //             backgroundImage: FileImage(image!),
-            //             radius: 64,
-            //           ),
-            //     Positioned(
-            //         bottom: -10,
-            //         left: 80,
-            //         child: IconButton(
-            //             onPressed: selectImage,
-            //             icon: const Icon(Icons.add_a_photo))),
-            //   ],
-            // ),
+            Stack(
+              children: [
+                image == null
+                    ? const CircleAvatar(
+                        backgroundImage: NetworkImage(
+                            'https://media.istockphoto.com/id/1370481100/photo/the-rabbit.jpg?b=1&s=170667a&w=0&k=20&c=RRWCO8rA35DL_pWrlU8F0whOqoZgrEGJQdPGhK2aH1o='),
+                        radius: 64,
+                      )
+                    : CircleAvatar(
+                        backgroundImage: FileImage(image!),
+                        radius: 64,
+                      ),
+                Positioned(
+                    bottom: -10,
+                    left: 80,
+                    child: IconButton(
+                        onPressed: selectImage,
+                        icon: const Icon(Icons.add_a_photo))),
+              ],
+            ),
             Row(
               children: [
                 Container(
@@ -96,4 +96,3 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
 }
 
 
-//2 : 10 : 25

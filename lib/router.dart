@@ -28,7 +28,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       //This is how we extract the data passed to it
       final name = arguments['name'];
       final uid = arguments['uid'];
-      final photo = arguments['uid'];
+      final photo = arguments['photo'];
       return MaterialPageRoute(builder: (context) =>  MobileChatScreen(name: name,uid: uid, photo: photo));
     default:
       return MaterialPageRoute(
@@ -38,3 +38,6 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
   }
 }
+
+
+// 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

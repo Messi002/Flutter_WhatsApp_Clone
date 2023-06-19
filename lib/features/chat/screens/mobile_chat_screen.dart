@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:whatsapp_clone/app_colors.dart';
-import 'package:whatsapp_clone/common/widgets/loader.dart';
-import 'package:whatsapp_clone/features/auth/controllers/auth_controller.dart';
-import 'package:whatsapp_clone/models/user_model.dart';
+// import 'package:whatsapp_clone/common/widgets/loader.dart';
+// import 'package:whatsapp_clone/features/auth/controllers/auth_controller.dart';
+// import 'package:whatsapp_clone/models/user_model.dart';
 import 'package:whatsapp_clone/widgets/chat_list.dart';
 
-import '../../../info.dart';
 import '../widgets/bottom_chat_field.dart';
 
+// ignore: must_be_immutable
 class MobileChatScreen extends ConsumerWidget {
   static const String routeName = '/mobile-chat-screen';
   String name;
@@ -24,6 +24,7 @@ class MobileChatScreen extends ConsumerWidget {
     required this.uid,
     required this.photo,
   }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
