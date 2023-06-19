@@ -8,7 +8,7 @@ import 'package:whatsapp_clone/app_colors.dart';
 // import 'package:whatsapp_clone/common/widgets/loader.dart';
 // import 'package:whatsapp_clone/features/auth/controllers/auth_controller.dart';
 // import 'package:whatsapp_clone/models/user_model.dart';
-import 'package:whatsapp_clone/widgets/chat_list.dart';
+import 'package:whatsapp_clone/features/chat/widgets/chat_list.dart';
 
 import '../widgets/bottom_chat_field.dart';
 
@@ -60,7 +60,7 @@ class MobileChatScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          Expanded(child: ChatList()),
+          Expanded(child: ChatList(receiverUserId: uid,)),
           BottomChatField(receiverUserId: uid,),
           SizedBox(height: 10),
         ],
